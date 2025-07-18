@@ -1,5 +1,6 @@
 package com.jdev.uploadFile.service;
 
+import com.jdev.uploadFile.dto.FullResponse;
 import com.jdev.uploadFile.dto.ResponseFiles;
 import com.jdev.uploadFile.entity.FileEntity;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,5 +14,6 @@ import java.util.UUID;
 public interface FileInterface {
     FileEntity saveFile(MultipartFile file) throws IOException;
     Optional<FileEntity> getFileById(UUID id) throws FileNotFoundException;
-    List<ResponseFiles> getAllFiles();
+    FullResponse getAllFiles(int page, int size);
+    void deleteFile(UUID id) throws FileNotFoundException;
 }
