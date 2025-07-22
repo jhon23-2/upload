@@ -3,3 +3,4 @@ target
 .gitignore
 Dockerfile
 README.md
+.env
